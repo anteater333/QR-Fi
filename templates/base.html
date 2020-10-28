@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>QR-Fi Generation</title>
+    </head>
+    <body>
+        {% include "navbar.html" %}
+        <!-- content start -->
+        {% block content %}
+        {% endblock %}
+        <!-- content end -->
+
+        <script src="{{ url_for('static', filename='jquery-3.5.1.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+
+        <!-- footer -->
+        <div class="jumbotron text-center mt-5 mb-0">
+            <h3 class="text-secondary">QR-Fi Generator</h3>
+            <p>Powered by <span class="text-primary">Sunghyun Kang</span>, <span class="text-primary">Jaehyun Bae</span>, <span class="text-primary">Suyeop So</span> with PKNU C.E.</p>
+        </div>
+    </body>
+</html>

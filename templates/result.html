@@ -2,17 +2,25 @@
 {% block content %}
 <div class="container">
     <h5 class="my-3 border-bottom pb-2">Your QR-Fi Generated!</h5>
-    <div id="qrcode" class="form_group">
-        <div>
-            <label for="qrcode">QR code for connect to {{name}} : </label>
+    <div class="row">
+        <div id="qrcode" class="col-sm-5 col-md-6">
+            <div>
+                <label for="qrcode">QR code for connect to {{name}} : </label>
+            </div>
+            <img src="{{ url_for('static', filename='qr.png') }}">
+            <div class="form-group">
+                <button id="new" class="btn btn-primary" onclick="history.back();">New one...</button>
+                <button id="export" class="btn btn-primary" data-toggle="tooltip" title="Export the QR-Fi as a PNG.">Export</button>
+                <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="Print the QR-Fi.">Print</button>
+                <button id="customize" class="btn btn-primary">Customize</button>
+            </div>
         </div>
-        <img src="{{ url_for('static', filename='qr.png') }}">
+        <div id="customize" class="col-sm-5 col-md-6">
+            <div>
+                <label for="customize">Custumize Options</label>
+            </div>
+        </div>
     </div>
-    <div class="form-group">
-        <button id="new" class="btn btn-primary" onclick="history.back();">New one...</button>
-        <button id="export" class="btn btn-primary" data-toggle="tooltip" title="Export the QR-Fi as a PNG.">Export</button>
-        <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="Print the QR-Fi.">Print</button>
-        <button id="customize" class="btn btn-primary">Customize</button>
-    </div>
+<!-- 원래 버튼 위치 -->
 </div>
 {% endblock %}

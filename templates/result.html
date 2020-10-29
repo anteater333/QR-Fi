@@ -10,7 +10,9 @@
             <img src="{{ url_for('static', filename='qr.png') }}">
             <div class="form-group">
                 <button id="new" class="btn btn-primary" onclick="history.back();">New one...</button>
-                <button id="export" class="btn btn-primary" data-toggle="tooltip" title="Export the QR-Fi as a PNG.">Export</button>
+                <a href="static/qr.png" download>
+                    <button id="export" class="btn btn-primary" data-toggle="tooltip" title="Export the QR-Fi as a PNG.">Export</button>
+                </a>
                 <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="Print the QR-Fi.">Print</button>
                 <button id="customize" class="btn btn-primary">Customize</button>
             </div>

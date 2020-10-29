@@ -2,27 +2,21 @@
 {% block content %}
 <div class="container">
     <h5 class="my-3 border-bottom pb-2">Your QR-Fi Generated!</h5>
-    <div class="row">
-        <div id="qrcode" class="col-sm-5 col-md-6">
-            <div>
-                <label for="qrcode">QR code for connect to {{name}} : </label>
-            </div>
-            <img src="{{ url_for('static', filename='qr.png') }}">
-            <div class="form-group">
-                <button id="new" class="btn btn-primary" onclick="history.back();">New one...</button>
-                <a href="static/qr.png" download>
-                    <button id="export" class="btn btn-primary" data-toggle="tooltip" title="Export the QR-Fi as a PNG.">Export</button>
-                </a>
-                <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="Print the QR-Fi.">Print</button>
-                <button id="customize" class="btn btn-primary">Customize</button>
-            </div>
-        </div>
-        <div id="customize" class="col-sm-5 col-md-6">
-            <div>
-                <label for="customize">Customize Options</label>
-            </div>
+    <div class="row justify-content-center">
+        <label for="qrcode">QR code for connect to {{name}} : </label>
+    </div>
+    <div class="row justify-content-center">
+        <img src="{{ url_for('static', filename='qr.png') }}">
+    </div>
+    <div class="row justify-content-center">
+        <div class="form-group">
+            <button id="new" class="btn btn-primary" onclick="history.back();">New one...</button>
+            <a href="static/qr.png" download>
+                <button id="save" class="btn btn-primary" data-toggle="tooltip" title="Save QR-Fi as PNG.">Download</button>
+            </a>
+            <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="Print QR-Fi.">Print</button>
+            <button id="customize" class="btn btn-primary">Customize</button>
         </div>
     </div>
-<!-- 원래 버튼 위치 -->
 </div>
 {% endblock %}

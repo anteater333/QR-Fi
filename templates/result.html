@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2">성공적으로 QR-Fi를 생성했습니다!</h5>
+    <h5 class="my-3 border-bottom pb-2">성공적으로 QR-Fi를 만들었습니다!</h5>
     <div class="row justify-content-center">
         <label for="qrcode">'{{name}}' 네트워크에 연결하기 위한 QR 코드</label>
     </div>
@@ -10,7 +10,7 @@
     </div>
     <div class="row justify-content-center">
         <div class="form-group">
-            <button id="new" class="btn btn-primary" onclick="history.back();">새 QR-Fi 생성</button>
+            <button id="new" class="btn btn-primary" onclick="history.back();">새 QR-Fi 만들기</button>
             <a href="static/qr.png" download>
                 <button id="save" class="btn btn-primary" data-toggle="tooltip" title="QR-Fi를 PNG 파일로 다운로드합니다.">다운로드</button>
             </a>

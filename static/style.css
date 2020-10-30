@@ -1,0 +1,2 @@
+.input { position: relative; } 
+.input .eyes { position: absolute; top: 0; bottom: 0; right: 8px; margin: auto 2px; height: 30px; font-size: 20px; cursor: pointer; }

@@ -5,13 +5,19 @@
     <form method="post" class="post-form my-3">
         <div class="form-group">
             <i class="fas fa-signal fa-fw" aria-hidden="true"></i>&nbsp;
-            <label for="ssid">무선 네트워크 SSID</label>
-            <input type="text" class="form-control" placeholder="SSID" name="ssid" id="ssid">
+            <label for="ssid">무선 네트워크 이름 (SSID)</label>
+            <input type="text" class="form-control" placeholder="SSID를 입력하세요" name="ssid" id="ssid">
         </div>
         <div class="form-group">
             <i class="fas fa-key fa-fw" aria-hidden="true"></i>&nbsp;
-            <label for="password">무선 네트워크 비밀번호(Key)</label>
-            <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+            <label for="password">무선 네트워크 비밀번호 (Key)</label>
+            <div class="input password">
+                <input type="password" class="form-control" placeholder="Key를 입력하세요" name="password" id="password">
+                <div class="eyes">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <script src="{{ url_for('static', filename='eye.js') }}"></script>
+            </div>
         </div>
         <div class="form-group">
             <i class="fas fa-lock fa-fw" aria-hidden="true"></i>&nbsp;
@@ -23,7 +29,7 @@
             </select>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary"><i class="fas fa-qrcode fa-key" aria-hidden="true"></i>&nbsp; QR-Fi 만들기</button>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp; QR-Fi 만들기</button>
         </div>
     </form>
 </div>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="container">
-    <h5 class="my-3 border-bottom pb-2">QR-Fi 만들기</h5>
+    <h5 class="my-3 border-bottom pb-2"><i class="fas fa-plus fa-fw" aria-hidden="true"></i>&nbsp; QR-Fi 만들기</h5>
     <form method="post" class="post-form my-3">
         <div class="form-group">
             <i class="fas fa-signal fa-fw" aria-hidden="true"></i>&nbsp;
@@ -44,5 +44,61 @@
             <button type="submit" class="btn btn-primary"><i class="fas fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp; QR-Fi 만들기</button>
         </div>
     </form>
+</div>
+<div class="container" style="margin-top: 50px;">
+    <a name="about"></a>
+    <h5 class="my-3 border-bottom pb-2"><i class="fas fa-qrcode fa-fw" aria-hidden="true"></i>&nbsp; QR-Fi 프로젝트</h5>
+    <p style='line-height:200%'>&nbsp;&nbsp;새로운 Wi-Fi 네트워크에 연결할 때마다 네트워크 제공자로부터 비밀번호를 제공받아 일일이 입력해야만 하는 번거로움이 있죠. 
+        이 과정에 QR 코드를 활용하면 여러분의 스마트폰에서 단순히 QR 코드를 스캔하는 것만으로 Wi-Fi 네트워크에 연결할 수 있습니다.<br> 
+        &nbsp;&nbsp;또한 기대되는 효과로, 네트워크 제공자는 비밀번호를 평문으로 노출하지 않고도 네트워크를 제공할 수 있을 것입니다!<br>
+        &nbsp;&nbsp;우리는 당신이 Wi-Fi 의 SSID, 비밀번호를 포함한 QR 코드를 쉽게 생성할 수 있도록 Flask 기반의 웹 서버를 구축하고, AWS EC2 를 활용해 웹 서비스를 제공하고 있습니다. 덧붙여, 새롭게 추가된 꾸미기 기능으로 당신만의 QR-Fi를 만들어보세요!</p>
+</div>
+<div class="container" style="margin-top: 50px;">
+    <a name="contact"></a>
+    <h5 class="my-3 border-bottom pb-2"><i class="fas fa-users fa-fw" aria-hidden="true"></i>&nbsp; 만든 사람들</h5>
+    <div class="row"> 
+        <div class="col-3"> 
+            <div class="card" > 
+               <img src="{{ url_for('static', filename='ksh.png') }}" class="card-img-top" alt="..."> 
+               <div class="card-body"> 
+                   <h5 class="card-title">Sung-hyun Kang</h5> 
+                   <p class="card-text">- 부경대학교 컴퓨터공학과 재학<br>- QR-Fi 팀장<br>- QR-Fi 프로젝트 설계 및 진행</p> 
+                   <a href="https://github.com/QR-Fi/QR-Fi" class="btn btn-primary">GitHub</a>
+                   <a href="mailto:ksh95@gmail.com" class="btn btn-primary">Send Mail</a>  
+               </div> 
+            </div> 
+         </div> 
+         <div class="col-3">
+            <div class="card" > 
+                <img src="{{ url_for('static', filename='bjh.png') }}" class="card-img-top" alt="..."> 
+                <div class="card-body"> 
+                    <h5 class="card-title">Jae-hyun Bae</h5> 
+                    <p class="card-text">- 부경대학교 컴퓨터공학과 재학<br>- QR-Fi Front-End 웹 서비스 구축 및 AWS EC2 배포</p> 
+                    <a href="https://github.com/HardM00N" class="btn btn-primary">GitHub</a>
+                    <a href="mailto:baejaehyun95@gmail.com" class="btn btn-primary">Send Mail</a>  
+                </div> 
+             </div> 
+         </div> 
+         <div class="col-3">
+            <div class="card" > 
+                <img src="{{ url_for('static', filename='ssy.png') }}" class="card-img-top" alt="..."> 
+                <div class="card-body"> 
+                    <h5 class="card-title">Soo-yeop So</h5> 
+                    <p class="card-text">- 부경대학교 컴퓨터공학과 재학<br>- QR-Fi Back-End 웹 서버 구축 및 QR 생성 로직 작성</p> 
+                    <a href="https://github.com/PrimeNumber2357" class="btn btn-primary">GitHub</a>
+                    <a href="mailto:ssy5603@gmail.com" class="btn btn-primary">Send Mail</a>  
+                </div> 
+             </div> 
+         </div> 
+         <div class="col-3">
+            <div class="card" style="width: 18rem;"> 
+                <img src="{{ url_for('static', filename='qrfi.png') }}" class="card-img-top" alt="..."> 
+                <div class="card-body"> 
+                    <h5 class="card-title">QR-Fi</h5> 
+                    <p class="card-text">- using Python, Flask, qrcode, jQuery, Bootstrap, AWS EC2</p> 
+                </div> 
+             </div> 
+         </div> 
+     </div>
 </div>
 {% endblock %}

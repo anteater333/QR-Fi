@@ -16,8 +16,6 @@ def main():
         
         qr = qrcode.QRCode(version=12, error_correction=qrcode.constants.ERROR_CORRECT_H, box_size=6, border=4)
         qr.add_data(F'WIFI:S:{ssid};T:{protocol};P:{password};;')
-        #qr = qrcode.make(F'WIFI:S:{ssid};T:{protocol};P:{password};;')
-        #qr.save("./static/qr.png")
         qr.make()
         qr1 = qr.make_image(fill_color="#000000", back_color="#ffffff")
         qr1.save("./static/qr.png")
@@ -35,17 +33,8 @@ def result():
         img = temp_qr.make_image(fill_color = fill, back_color = back)
         img.save("./static/qr.png")
 
-        #return render_template('result.html', image_file='static/qr.png')
         return render_template('result.html', fill_color=fill, back_color=back, image_file='static/qr.png', name=temp_ssid)
     return render_template('result.html', image_file='static/qr.png', name=temp_ssid)
-
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
 
 @app.after_request
 def set_response_headers(response):

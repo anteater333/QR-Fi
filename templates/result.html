@@ -10,7 +10,7 @@
             var tmpDate = new Date();
             $("#itemImg").attr("src", "{{ url_for('static', filename='qr.png') }}"+tmpDate.getTime());
         </script>
-        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}">
+        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 20px 15px;">
     </div>
     <div class="row justify-content-center">
         <div class="form-group">
@@ -33,7 +33,7 @@
                             </div> 
                             <div class="modal-body">
                                 <div class="row justify-content-center">
-                                    <img src="{{ url_for('static', filename='qr.png') }}">
+                                    <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 15px 15px;">
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-5 col-md-6">
@@ -66,7 +66,7 @@
                                                 });
                                             </script>                           
                                             <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
-                                                <label for="fill_color"><i class="fas fa-object-ungroup fa-fw" aria-hidden="true"></i>&nbsp;채우기 색 선택</label>
+                                                <label for="fill_color"><i class="fas fa-object-ungroup fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;채우기 색 선택</label>
                                                 <input type="text" id="fill_color" name="fill_color" class="form-control demo minicolors-input" data-control="hue" value="#000000" size="7">
                                             </div>
                                         </div>
@@ -74,7 +74,7 @@
                                     <div class="col-sm-5 col-md-6"> 
                                         <div class="form-group">
                                             <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
-                                                <label for="back_color"><i class="fas fa-object-group fa-fw" aria-hidden="true"></i>&nbsp;배경 색 선택</label>
+                                                <label for="back_color"><i class="fas fa-object-group fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;배경 색 선택</label>
                                                 <input type="text" id="back_color" name="back_color" class="form-control demo minicolors-input" data-control="hue" value="#ffffff" size="7">
                                             </div>
                                         </div>

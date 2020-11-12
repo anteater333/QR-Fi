@@ -31,39 +31,53 @@
                                 <img src="{{ url_for('static', filename='qr.png') }}">
                             </div>
                             <div class="row justify-content-center">
-                                <div class="form-group">
-                                    <!-- 컬러 피커 플러그인 -->
-                                    <script>
-                                        $(document).ready( function() {
-                                        $('.demo').each( function() {
-                                            $(this).minicolors({
-                                            control: $(this).attr('data-control') || 'hue',
-                                            defaultValue: $(this).attr('data-defaultValue') || '',
-                                            format: $(this).attr('data-format') || 'hex',
-                                            keywords: $(this).attr('data-keywords') || '',
-                                            inline: $(this).attr('data-inline') === 'true',
-                                            letterCase: $(this).attr('data-letterCase') || 'lowercase',
-                                            opacity: $(this).attr('data-opacity'),
-                                            position: $(this).attr('data-position') || 'bottom',
-                                            swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
-                                            change: function(hex, opacity) {
-                                                var log;
-                                                try {
-                                                log = hex ? hex : 'transparent';
-                                                if( opacity ) log += ', ' + opacity;
-                                                console.log(log);
-                                                } catch(e) {}
-                                            },
-                                            theme: 'default'
-                                            });
-                                        });
-                                        });
-                                    </script>
-                                    <label for="color"><i class="fas fa-palette fa-fw" aria-hidden="true"></i>&nbsp;색상 선택 :</label>
-                                    <div class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
-                                        <input type="text" id="color" class="form-control demo minicolors-input" data-control="hue" value="#ff6161" size="7">
-                                    </div>
-                                </div>                       
+                                <div class="col-sm-5 col-md-6">
+                                    <form method="post" class="post-form my-3">
+                                        <div class="form-group">
+                                            <!-- 컬러 피커 플러그인 -->
+                                            <script>
+                                                $(document).ready( function() {
+                                                $('.demo').each( function() {
+                                                    $(this).minicolors({
+                                                    control: $(this).attr('data-control') || 'hue',
+                                                    defaultValue: $(this).attr('data-defaultValue') || '',
+                                                    format: $(this).attr('data-format') || 'hex',
+                                                    keywords: $(this).attr('data-keywords') || '',
+                                                    inline: $(this).attr('data-inline') === 'true',
+                                                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                                                    opacity: $(this).attr('data-opacity'),
+                                                    position: $(this).attr('data-position') || 'bottom',
+                                                    swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+                                                    change: function(hex, opacity) {
+                                                        var log;
+                                                        try {
+                                                        log = hex ? hex : 'transparent';
+                                                        if( opacity ) log += ', ' + opacity;
+                                                        console.log(log);
+                                                        } catch(e) {}
+                                                    },
+                                                    theme: 'form-control'
+                                                    });
+                                                });
+                                                });
+                                            </script>                           
+                                            <div class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
+                                                <label for="fill_color"><i class="fas fa-palette fa-fw" aria-hidden="true"></i>&nbsp;채우기 색 선택</label>
+                                                <input type="text" id="fill_color" class="form-control demo minicolors-input" data-control="hue" value="#000000" size="7">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="col-sm-5 col-md-6">
+                                    <form method="post" class="post-form my-3">
+                                        <div class="form-group">
+                                            <div class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
+                                                <label for="back_color"><i class="fas fa-palette fa-fw" aria-hidden="true"></i>&nbsp;배경 색 선택</label>
+                                                <input type="text" id="back_color" class="form-control demo minicolors-input" data-control="hue" value="#ffffff" size="7">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>                                
                             </div>
                         </div> 
                         <div class="modal-footer"> 

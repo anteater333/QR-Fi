@@ -6,7 +6,11 @@
         <label for="qrcode"><i class="fas fa-wifi fa-key" aria-hidden="true"></i>&nbsp; '{{name}}' 네트워크에 연결하기 위한 QR 코드</label>
     </div>
     <div class="row justify-content-center">
-        <img src="{{ url_for('static', filename='qr.png') }}">
+        <script>
+            var tmpDate = new Date();
+            $("#itemImg").attr("src", "{{ url_for('static', filename='qr.png') }}"+tmpDate.getTime());
+        </script>
+        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}">
     </div>
     <div class="row justify-content-center">
         <div class="form-group">
@@ -94,7 +98,6 @@
                                 </script>
                             </div> 
                         </form>
-                        <div>'{{fill_color}}' and '{{back_color}}'</div>
                     </div> 
                 </div> 
             </div>

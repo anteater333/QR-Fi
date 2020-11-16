@@ -13,95 +13,107 @@
         <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 20px 15px;" class="img-fluid">
     </div>
     <div class="row justify-content-center">
-        <div class="form-group">
-            <button id="new" class="btn btn-primary" onclick="history.back();"><i class="fas fa-plus fa-fw" aria-hidden="true"></i>&nbsp; 새 QR-Fi 만들기</button>
-            <a href="static/qr.png" download>
-                <button id="save" class="btn btn-primary" data-toggle="tooltip" title="QR-Fi를 PNG 파일로 다운로드합니다."><i class="fas fa-download fa-fw" aria-hidden="true"></i>&nbsp; 다운로드</button>
-            </a>
-            <button id="print" class="btn btn-primary" onclick="javascript:window.print()" data-toggle="tooltip" title="QR-Fi를 프린트합니다."><i class="fas fa-print fa-fw" aria-hidden="true"></i>&nbsp; 프린트</button>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-palette fa-fw" aria-hidden="true"></i>&nbsp; 꾸미기</button>
-            <!-- Modal --> 
-            <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true"> 
-                <div class="modal-dialog" role="document"> 
-                    <div class="modal-content"> 
-                        <form method="post" class="post-form my-3">
-                            <div class="modal-header"> 
-                                <h5 class="modal-title" id="staticBackdropLabel">나만의 QR-Fi 꾸미기</h5> 
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
-                                    <span aria-hidden="true">&times;</span> 
-                                </button> 
-                            </div> 
-                            <div class="modal-body">
-                                <div class="row justify-content-center">
-                                    <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 15px 15px;" class="img-fluid">
-                                </div>
-                                <div class="row justify-content-center">
-                                    <div class="col-sm-5 col-md-6">
-                                        <div class="form-group">
-                                            <!-- 컬러 피커 플러그인 -->
-                                            <script>
-                                                $(document).ready( function() {
-                                                $('.demo').each( function() {
-                                                    $(this).minicolors({
-                                                    control: $(this).attr('data-control') || 'hue',
-                                                    defaultValue: $(this).attr('data-defaultValue') || '',
-                                                    format: $(this).attr('data-format') || 'hex',
-                                                    keywords: $(this).attr('data-keywords') || '',
-                                                    inline: $(this).attr('data-inline') === 'true',
-                                                    letterCase: $(this).attr('data-letterCase') || 'lowercase',
-                                                    opacity: $(this).attr('data-opacity'),
-                                                    position: $(this).attr('data-position') || 'bottom',
-                                                    swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
-                                                    change: function(hex, opacity) {
-                                                        var log;
-                                                        try {
-                                                        log = hex ? hex : 'transparent';
-                                                        if( opacity ) log += ', ' + opacity;
-                                                        console.log(log);
-                                                        } catch(e) {}
-                                                    },
-                                                    theme: 'form-control'
-                                                    });
-                                                });
-                                                });
-                                            </script>                           
-                                            <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
-                                                <label for="fill_color"><i class="fas fa-object-ungroup fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;채우기 색 선택</label>
-                                                <input type="text" id="fill_color" name="fill_color" class="form-control demo minicolors-input" data-control="hue" value="#000000" size="7">
-                                            </div>
-                                        </div>
+    <div class="col" style="max-width: 500px">
+        <div class="row justify-content-center">
+            <div class="col">
+                <button id="new" class="btn btn-primary btn-block" onclick="history.back();"><i class="fas fa-plus fa-fw" aria-hidden="true"></i>&nbsp; 새 QR-Fi 만들기</button>
+            </div>
+            <div class="col">
+                <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#staticBackdrop"><i class="fas fa-palette fa-fw" aria-hidden="true"></i>&nbsp; 꾸미기</button>
+                <!-- Modal --> 
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true"> 
+                    <div class="modal-dialog" role="document"> 
+                        <div class="modal-content"> 
+                            <form method="post" class="post-form my-3">
+                                <div class="modal-header"> 
+                                    <h5 class="modal-title" id="staticBackdropLabel">나만의 QR-Fi 꾸미기</h5> 
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+                                        <span aria-hidden="true">&times;</span> 
+                                    </button> 
+                                </div> 
+                                <div class="modal-body">
+                                    <div class="row justify-content-center">
+                                        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 15px 15px;" class="img-fluid">
                                     </div>
-                                    <div class="col-sm-5 col-md-6"> 
-                                        <div class="form-group">
-                                            <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
-                                                <label for="back_color"><i class="fas fa-object-group fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;배경 색 선택</label>
-                                                <input type="text" id="back_color" name="back_color" class="form-control demo minicolors-input" data-control="hue" value="#ffffff" size="7">
+                                    <div class="row justify-content-center">
+                                        <div class="col-sm-5 col-md-6">
+                                            <div class="form-group">
+                                                <!-- 컬러 피커 플러그인 -->
+                                                <script>
+                                                    $(document).ready( function() {
+                                                    $('.demo').each( function() {
+                                                        $(this).minicolors({
+                                                        control: $(this).attr('data-control') || 'hue',
+                                                        defaultValue: $(this).attr('data-defaultValue') || '',
+                                                        format: $(this).attr('data-format') || 'hex',
+                                                        keywords: $(this).attr('data-keywords') || '',
+                                                        inline: $(this).attr('data-inline') === 'true',
+                                                        letterCase: $(this).attr('data-letterCase') || 'lowercase',
+                                                        opacity: $(this).attr('data-opacity'),
+                                                        position: $(this).attr('data-position') || 'bottom',
+                                                        swatches: $(this).attr('data-swatches') ? $(this).attr('data-swatches').split('|') : [],
+                                                        change: function(hex, opacity) {
+                                                            var log;
+                                                            try {
+                                                            log = hex ? hex : 'transparent';
+                                                            if( opacity ) log += ', ' + opacity;
+                                                            console.log(log);
+                                                            } catch(e) {}
+                                                        },
+                                                        theme: 'form-control'
+                                                        });
+                                                    });
+                                                    });
+                                                </script>                           
+                                                <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
+                                                    <label for="fill_color"><i class="fas fa-object-ungroup fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;채우기 색 선택</label>
+                                                    <input type="text" id="fill_color" name="fill_color" class="form-control demo minicolors-input" data-control="hue" value="#000000" size="7">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>                                
-                                </div>
-                            </div> 
-                            <div class="modal-footer"> 
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times fa-fw" aria-hidden="true"></i>&nbsp; 취소</button> 
-                                <button type="submit" class="btn btn-primary" name="apply"><i class="fas fa-check fa-fw" aria-hidden="true"></i>&nbsp; 변경사항 적용</button>
-                                <script>
-                                    $('.apply').on('click',function(){
-                                        function staticBackdrop(){
-                                        // 팝업 호출 url
-                                        var url = "/result.html";
-                                        
-                                        // 팝업 호출
-                                        $("#staticBackdrop > .modal-dialog").load(url, function() { 
-                                            $("#staticBackdrop").modal("show"); 
+                                        <div class="col-sm-5 col-md-6"> 
+                                            <div class="form-group">
+                                                <div align="center" class="minicolors minicolors-theme-bootstrap minicolors-postion-bottom minicolors-postion-left minicolors-focus">
+                                                    <label for="back_color"><i class="fas fa-object-group fa-fw" aria-hidden="true" style="margin-bottom: 10px;"></i>&nbsp;배경 색 선택</label>
+                                                    <input type="text" id="back_color" name="back_color" class="form-control demo minicolors-input" data-control="hue" value="#ffffff" size="7">
+                                                </div>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                </div> 
+                                <div class="modal-footer"> 
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fas fa-times fa-fw" aria-hidden="true"></i>&nbsp; 취소</button> 
+                                    <button type="submit" class="btn btn-primary" name="apply"><i class="fas fa-check fa-fw" aria-hidden="true"></i>&nbsp; 변경사항 적용</button>
+                                    <script>
+                                        $('.apply').on('click',function(){
+                                            function staticBackdrop(){
+                                            // 팝업 호출 url
+                                            var url = "/result.html";
+                                            
+                                            // 팝업 호출
+                                            $("#staticBackdrop > .modal-dialog").load(url, function() { 
+                                                $("#staticBackdrop").modal("show"); 
+                                            });
                                         });
-                                    });
-                                </script>
-                            </div> 
-                        </form>
+                                    </script>
+                                </div> 
+                            </form>
+                        </div> 
                     </div> 
-                </div> 
+                </div>
             </div>
         </div>
+        <div class="row justify-content-center" style="margin-top: 10px;">
+            <div class="col">
+                <a href="static/qr.png" download>
+                    <button id="save" class="btn btn-primary btn-block" data-toggle="tooltip" title="QR-Fi를 PNG 파일로 다운로드합니다."><i class="fas fa-download fa-fw" aria-hidden="true"></i>&nbsp; 다운로드</button>
+                </a>
+            </div>
+            <div class="col">
+                <button id="print" class="btn btn-primary btn-block" onclick="javascript:window.print()" data-toggle="tooltip" title="QR-Fi를 프린트합니다."><i class="fas fa-print fa-fw" aria-hidden="true"></i>&nbsp; 프린트</button>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 {% endblock %}

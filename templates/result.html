@@ -10,7 +10,7 @@
             var tmpDate = new Date();
             $("#itemImg").attr("src", "{{ url_for('static', filename='qr.png') }}"+tmpDate.getTime());
         </script>
-        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 20px 15px;">
+        <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 20px 15px;" class="img-fluid">
     </div>
     <div class="row justify-content-center">
         <div class="form-group">
@@ -33,7 +33,7 @@
                             </div> 
                             <div class="modal-body">
                                 <div class="row justify-content-center">
-                                    <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 15px 15px;">
+                                    <img id="itemImg" src="{{ url_for('static', filename='qr.png') }}" style="margin: 10px 15px 15px 15px;" class="img-fluid">
                                 </div>
                                 <div class="row justify-content-center">
                                     <div class="col-sm-5 col-md-6">
